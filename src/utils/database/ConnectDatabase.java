@@ -29,7 +29,7 @@ public class ConnectDatabase {
             try {
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                 String url = Const.DB_URL + ";user=" + Const.USER_NAME + ";password=" + Const.PASSWORD;
-                conn = DriverManager.getConnection(url);
+                conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ReadingBookMS","sa","123456789");
             } catch (SQLException | ClassNotFoundException e) {
                 Logger.getLogger(ConnectDatabase.class.getName()).log(Level.SEVERE, null, e);
             }
